@@ -96,6 +96,12 @@ namespace KattisSolution
                 i = BigInteger.GreatestCommonDivisor(x, y);
             }
 
+            if (y < 0)
+            {
+                x *= -1;
+                y *= -1;
+            }
+
             return new Tuple<BigInteger, BigInteger>(x, y);
         }
     }

@@ -143,5 +143,39 @@ namespace KattisSolution.Tests
                 Assert.That(result, Is.EqualTo(expectedAnswer));
             }
         }
+
+        [Test]
+        public void SampleTest_WithStringData_Should_Pass8()
+        {
+            // Arrange
+            const string expectedAnswer = "-6 / 49\n";
+            using (var input = new MemoryStream(Encoding.UTF8.GetBytes("1\n2 7 * -3 7")))
+            using (var output = new MemoryStream())
+            {
+                // Act
+                Program.Solve(input, output);
+                var result = Encoding.UTF8.GetString(output.ToArray());
+
+                // Assert
+                Assert.That(result, Is.EqualTo(expectedAnswer));
+            }
+        }
+
+        [Test]
+        public void SampleTest_WithStringData_Should_Pass9()
+        {
+            // Arrange
+            const string expectedAnswer = "-6 / 49\n";
+            using (var input = new MemoryStream(Encoding.UTF8.GetBytes("1\n2 7 * 3 -7")))
+            using (var output = new MemoryStream())
+            {
+                // Act
+                Program.Solve(input, output);
+                var result = Encoding.UTF8.GetString(output.ToArray());
+
+                // Assert
+                Assert.That(result, Is.EqualTo(expectedAnswer));
+            }
+        }
     }
 }
